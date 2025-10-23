@@ -1,18 +1,24 @@
 <?php
 include_once '../Model/connection.php';
+include_once '../Model/User.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];          
-    echo "<br>Username: " . $username. "<br>";
-    echo "Password: " . $password . "<br>";
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $database = new Database();
+    $db = $database->getDB();
+    $user = new User($db);
+
+    $user->username = $_POST['username'];
+    $user->email = $_POST['email'];
+    $user->password = $_POST['password'];
+
+    if($user->register()){
+        header("Location: login.php");
+        exit();
+    } else {
+        echo "Registration failed.";
+    }
 }
-
-
 ?>
-
-
 <!doctype html>
 <html lang="en">
 
@@ -95,5 +101,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-
 </html>
