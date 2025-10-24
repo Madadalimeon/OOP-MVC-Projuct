@@ -1,5 +1,6 @@
  <footer id="footer" class="overflow-hidden">
-      <div class="container">
+
+ <div class="container">
         <div class="row">
           <div class="footer-top-area">
             <div class="row d-flex flex-wrap justify-content-between">

@@ -8,7 +8,6 @@ if (!isset($_SESSION['username'])) {
 <?php
 include(__DIR__ . "/../include/header.php");
 include(__DIR__ . "/../Model/connection.php");
-
 ?>
 <style>
 .image-holder {
@@ -161,7 +160,6 @@ include(__DIR__ . "/../Model/connection.php");
           $stmt = $db->prepare($select_query);
           $stmt->execute();
           $result = $stmt->get_result();
-
           while ($row = $result->fetch_assoc()) {
           ?>
             <div class="swiper-slide">

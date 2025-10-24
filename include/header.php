@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Ministore</title>
   <meta charset="utf-8">
@@ -123,7 +122,7 @@
         <li class="cat-list-item">
           <a href="#" title="Speakers">Speakers</a>
         </li>
-        <li class="cat-list-item">
+          <li class="cat-list-item">
           <a href="#" title="Memory Cards">Memory Cards</a>
         </li>
       </ul>
@@ -152,7 +151,7 @@
           <div class="offcanvas-body">
             <ul id="navbar" class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link me-4 active" href="#billboard">Home</a>
+                <a class="nav-link me-4 active" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link me-4" href="#company-services">Services</a>
@@ -194,7 +193,7 @@
                     <a href="single-product.html" class="dropdown-item">Single Product</a>
                   </li>
                    <li>
-                    <a href="add_products.php" class="dropdown-item">add_products</a>
+                    <a href="add_product_view.php" class="dropdown-item">add_products</a>
                   </li>
                   <li>
                     <a href="contact.html" class="dropdown-item">Contact</a>
