@@ -1,27 +1,21 @@
 <?php
-include_once '../Model/connection.php';
-include_once '../Model/User.php';
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+include '../Model/connection.php';
+include "../Model/RegisterUser.php";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $database = new Database();
     $db = $database->getDB();
-    $user = new User($db);
-
-    $user->username = $_POST['username'];
-    $user->email = $_POST['email'];
-    $user->password = $_POST['password'];
-
-    if($user->register()){
+    $user = new RegisterUser($_POST['username'], $_POST['email'], $_POST['password']);
+    if($user->register_()){
         header("Location: login.php");
         exit();
     } else {
-        echo "Registration failed.";
+        header("Location: Register.php");
+        exit();
     }
 }
 ?>
 <!doctype html>
-<html lang="en">
-
+<html lang="en">             
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="col">
                 <h2>Register form</h2>
                 <div class="container_from">
-                    <form method="post">
+                    <form  method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
                             <input type="text" name="username" class="form-control" id="exampleInputEmail1">

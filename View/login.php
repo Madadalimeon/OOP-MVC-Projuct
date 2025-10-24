@@ -1,3 +1,32 @@
+<?php
+session_start(); 
+include_once '../Model/connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $database = new Database();
+    $db = $database->getDB();
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $login_query = "SELECT username, password FROM register WHERE username = ?";
+    $stmt = $db->prepare($login_query);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if ($password == $user['password']) { 
+            $_SESSION['username'] = $user['username']; 
+            header("Location: index.php");
+            exit();
+        } else {
+            echo "<script>alert('Incorrect password'); window.location='login.php';</script>";
+        }
+    } else {
+        echo "<script>alert('Username not found'); window.location='login.php';</script>";
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
