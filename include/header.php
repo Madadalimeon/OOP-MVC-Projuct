@@ -172,25 +172,7 @@
                 <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="about.html" class="dropdown-item">About</a>
-                  </li>
-                  <li>
-                    <a href="blog.html" class="dropdown-item">Blog</a>
-                  </li>
-                  <li>
                     <a href="shop.html" class="dropdown-item">Shop</a>
-                  </li>
-                  <li>
-                    <a href="cart.html" class="dropdown-item">Cart</a>
-                  </li>
-                  <li>
-                    <a href="checkout.html" class="dropdown-item">Checkout</a>
-                  </li>
-                  <li>
-                    <a href="single-post.html" class="dropdown-item">Single Post</a>
-                  </li>
-                  <li>
-                    <a href="single-product.html" class="dropdown-item">Single Product</a>
                   </li>
                    <li>
                     <a href="add_product_view.php" class="dropdown-item">add_products</a>

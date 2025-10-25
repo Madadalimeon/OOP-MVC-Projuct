@@ -29,10 +29,7 @@ include(__DIR__ . "/../Model/connection.php");
     height: 180px;
   }
 }
-
 </style>
-
-
 <section id="billboard" class="position-relative overflow-hidden bg-light-blue">
   <div class="swiper main-swiper">
     <div class="swiper-wrapper">
@@ -171,7 +168,7 @@ include(__DIR__ . "/../Model/connection.php");
                 </div>
                 <div class="cart-concern position-absolut ">
                   <div class="cart-button d-flex">
-                    <a href="Shop.php" class="btn btn-medium btn-black">
+                    <a href="Shop.php?add_to_cart=<?php echo $row['Products_id']; ?>" class="btn btn-medium btn-black">
                       Add to Cart
                       <svg class="cart-outline">
                         <use xlink:href="#cart-outline"></use>
